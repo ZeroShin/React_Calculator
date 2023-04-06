@@ -1,4 +1,4 @@
 # React_Calculator
-React_Calculator Project
+리액트 계산기 프로젝트입니다.
 
-hello
+리액트를 통한 학습을 위한 프로젝트를 진행하고 있습니다.
