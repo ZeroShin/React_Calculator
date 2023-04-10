@@ -10,9 +10,9 @@ export default class Button extends React.Component {
     clickHandler: PropTypes.func,
   };
 
-//   handleClick = () => {
-//     this.props.clickHandler(this.props.name);
-//   };
+  handleClick = () => {
+    this.props.clickHandler(this.props.name);
+  };
 
   render() {
     const className = [
@@ -23,8 +23,7 @@ export default class Button extends React.Component {
 
     return (
       <div className={className.join(" ").trim()}>
-        {/* <button onClick={this.handleClick}>{this.props.name}</button> */}
-        <button >{this.props.name}</button>
+        <button onClick={this.handleClick}>{this.props.name}</button>
       </div>
     );
   }
