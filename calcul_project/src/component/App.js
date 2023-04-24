@@ -12,8 +12,19 @@ export default class App extends React.Component {
     operation: null,
   };
 
-  handleClick = buttonName => {
-    this.setState(calculate(this.state, buttonName));
+  handleClick = async buttonName => {
+    await this.setState(calculate(this.state, buttonName));
+
+    if (buttonName === '=') {
+      const value = this.state.total;
+      axios.post('/api/data/save', { value })
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          console.error("에러발생");
+        });
+    }
   };
 
   render() {
