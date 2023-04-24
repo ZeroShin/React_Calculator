@@ -6,7 +6,7 @@ import "./TitleBar.css";
 
 library.add(fas, faBars, faAnglesLeft, faMoon, faSun)
 
-function TitleBar() {
+function TitleBar(props) {
     const [menuIcon, setMenuIcon] = useState(faBars);
     const [dayIcon, setDayIcon] = useState(faSun);
 
@@ -34,8 +34,8 @@ function TitleBar() {
                     <button onClick={menuClick} >
                         <FontAwesomeIcon icon={menuIcon} size="3x" />
                     </button>
-                    <button>
-                        <text>결과 가져오기</text>
+                    <button onClick={props.loadButtonClick}>
+                        <text>마지막 결과값 불러오기</text>
                     </button>
                 </div>
                 <div className="column center" style={style.title}>Calculator</div>

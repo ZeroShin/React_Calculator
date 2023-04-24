@@ -33,14 +33,18 @@ export default class App extends React.Component {
     .then(response => {
       console.log(response.data);
       this.state.total = response.data;
+      // Display 컴포넌트에 전달되는 props를 변경합니다.
+      this.forceUpdate();
     })
-    .catch(error => console.error("가져오기 실패"));
+    .catch(error => {
+      console.error("가져오기 실패");
+    });
   }
 
   render() {
     return (
       <div className="component-app">
-        <TitleBar />
+        <TitleBar loadButtonClick={this.loadButtonClick} />
         <Display value={this.state.next || this.state.total || "0"} />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
