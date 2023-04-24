@@ -3,6 +3,7 @@ import Display from "./Display";
 import TitleBar from "./TitleBar";
 import ButtonPanel from "./ButtonPanel";
 import calculate from "../logic/calculate";
+import axios from "axios";
 import "./App.css";
 
 export default class App extends React.Component {
@@ -26,6 +27,15 @@ export default class App extends React.Component {
         });
     }
   };
+
+  loadButtonClick = () =>{
+    axios.get('api/data/req')
+    .then(response => {
+      console.log(response.data);
+      this.state.total = response.data;
+    })
+    .catch(error => console.error("가져오기 실패"));
+  }
 
   render() {
     return (
