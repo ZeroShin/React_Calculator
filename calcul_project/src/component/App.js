@@ -13,6 +13,7 @@ export default class App extends React.Component {
     operation: null,
   };
 
+
   handleClick = async buttonName => {
     await this.setState(calculate(this.state, buttonName));
 
@@ -32,7 +33,7 @@ export default class App extends React.Component {
     axios.get('api/data/req')
     .then(response => {
       console.log(response.data);
-      this.state.total = response.data;
+      this.state.total = response.data.value;
       // Display 컴포넌트에 전달되는 props를 변경합니다.
       this.forceUpdate();
     })
