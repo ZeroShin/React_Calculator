@@ -2,19 +2,28 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faAnglesLeft, faBars, faMoon, faSun, fas } from '@fortawesome/free-solid-svg-icons'
+import { useCookies } from 'react-cookie';
 import "./TitleBar.css";
 
 library.add(fas, faBars, faAnglesLeft, faMoon, faSun)
 
 function TitleBar(props) {
+    const [cookies, setCookie, removeCookie] = useCookies(['theme']);
     const [menuIcon, setMenuIcon] = useState(faBars);
-    const [dayIcon, setDayIcon] = useState(faSun);
+    const [theme, setTheme] = useState(cookies.theme || 'light');
+    const [dayIcon, setDayIcon] = useState(cookies.theme === 'dark' ? faMoon : faSun);
 
     const menuClick = () => {
         setMenuIcon(menuIcon === faBars ? faAnglesLeft : faBars);
     };
 
     const dayClick = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        //쿠키저장
+        setCookie('theme', newTheme);
+        //테마처리
+        setTheme(newTheme);
+        //아이콘 처리
         setDayIcon(dayIcon === faSun ? faMoon : faSun);
     };
 

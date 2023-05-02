@@ -10,7 +10,8 @@
   
   .component-button button {
     background-color: #e0e0e0;
-    border: 0;
+    border: 5;
+    border-radius: 30px;
     font-size: 1.5rem;
     margin: 0 1px 0 0;
     flex: 1 0 auto;
