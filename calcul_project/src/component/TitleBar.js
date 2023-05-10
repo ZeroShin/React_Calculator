@@ -34,6 +34,10 @@ function TitleBar(props) {
         title: {
           color: dayIcon === faSun ? "black" : "gray",
         },
+        themeButton: {
+            color : dayIcon === faSun ? "black" : "lightgray",
+            TransitionEvent
+        },
       };
 
     return (
@@ -52,7 +56,7 @@ function TitleBar(props) {
                     <button>
                         <text>랜덤 탬플릿색상 변경 </text>
                     </button>
-                    <button onClick={dayClick} >
+                    <button onClick={dayClick} className="title theme" style={style.themeButton}>
                         <FontAwesomeIcon icon={dayIcon} size="3x" />
                     </button>
                 </div>
