@@ -36,7 +36,7 @@ function TitleBar(props) {
         },
         themeButton: {
             color : dayIcon === faSun ? "black" : "lightgray",
-            TransitionEvent
+            
         },
       };
 

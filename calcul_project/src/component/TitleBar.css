@@ -40,15 +40,20 @@
   background-color: transparent;
   /*테두리 두께 없앰*/
   border: 0;
+  /* 늘려보이지 않도록 처리 */
+  margin: 7%;
   /*둥근 버튼 처리*/
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .theme {
   width: 60px;
   height: 60px;
-  transition: all ease 0.2s;
-  &:hover{
+  
+  transition: all ease 0.5s;
+  &:hover {
     transform: rotate(-30deg);
+    background-color: slategray;
   }
 }
