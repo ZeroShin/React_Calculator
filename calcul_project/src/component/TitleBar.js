@@ -53,9 +53,9 @@ function TitleBar(props) {
                 </div>
                 <div className="column center" style={style.title}>Calculator</div>
                 <div className="column right">
-                    <button>
+                    {/* <button>
                         <text>랜덤 탬플릿색상 변경 </text>
-                    </button>
+                    </button> */}
                     <button onClick={dayClick} className="title theme" style={style.themeButton}>
                         <FontAwesomeIcon icon={dayIcon} size="3x" />
                     </button>
