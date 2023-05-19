@@ -47,9 +47,9 @@ function TitleBar(props) {
                     <button onClick={menuClick} >
                         <FontAwesomeIcon icon={menuIcon} size="3x" />
                     </button>
-                    <button onClick={props.loadButtonClick}>
+                    {/* <button onClick={props.loadButtonClick}>
                         <text>마지막 결과값 불러오기</text>
-                    </button>
+                    </button> */}
                 </div>
                 <div className="column center" style={style.title}>Calculator</div>
                 <div className="column right">
