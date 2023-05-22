@@ -42,16 +42,25 @@
   border: 0;
   /* 늘려보이지 않도록 처리 */
   margin: 7%;
+}
+
+.menu {
   /*둥근 버튼 처리*/
-  border-radius: 50%;
-  object-fit: cover;
+  border-radius: 20%;
+  &:hover {
+    background-color: lightslategray;
+  }
 }
 
 .theme {
+  /*둥근 버튼 처리*/
+  border-radius: 50%;
+  object-fit: cover;
   width: 60px;
   height: 60px;
-  
+
   transition: all ease 0.5s;
+
   &:hover {
     transform: rotate(-30deg);
     background-color: slategray;

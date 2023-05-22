@@ -44,7 +44,7 @@ function TitleBar(props) {
         <div className="component-titlebar" style={style.titleBar}>
             <div className="container">
                 <div className="column left">
-                    <button onClick={menuClick} >
+                    <button onClick={menuClick} className="title menu">
                         <FontAwesomeIcon icon={menuIcon} size="3x" />
                     </button>
                     {/* <button onClick={props.loadButtonClick}>
