@@ -45,7 +45,7 @@
 }
 
 .menu {
-  /*둥근 버튼 처리*/
+  /*라운딩 처리*/
   border-radius: 20%;
   &:hover {
     background-color: lightslategray;
