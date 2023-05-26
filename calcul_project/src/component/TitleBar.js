@@ -7,7 +7,7 @@ import "./TitleBar.css";
 
 library.add(fas, faBars, faAnglesLeft, faMoon, faSun)
 
-function TitleBar(props) {
+function TitleBar({ data, onThemeChange }) {
     const [cookies, setCookie, removeCookie] = useCookies(['theme']);
     const [menuIcon, setMenuIcon] = useState(faBars);
     const [theme, setTheme] = useState(cookies.theme || 'light');
@@ -24,27 +24,31 @@ function TitleBar(props) {
         //테마처리
         setTheme(newTheme);
         //아이콘 처리
-        setDayIcon(dayIcon === faSun ? faMoon : faSun);
+        setDayIcon(newTheme === "light" ? faSun : faMoon);
+        //상위 데이터 업데이트
+        onThemeChange(newTheme);
     };
 
     const style = {
         titleBar: {
-          backgroundColor: dayIcon === faSun ? "white" : "black",
+            backgroundColor: dayIcon === faSun ? "white" : "black",
         },
         title: {
-          color: dayIcon === faSun ? "black" : "gray",
+            color: dayIcon === faSun ? "black" : "gray",
         },
         themeButton: {
-            color : dayIcon === faSun ? "black" : "lightgray",
-            
+            color: dayIcon === faSun ? "black" : "lightgray",
         },
-      };
+        menuButton: {
+            color: dayIcon === faSun ? "black" : "lightgray",
+        },
+    };
 
     return (
         <div className="component-titlebar" style={style.titleBar}>
             <div className="container">
                 <div className="column left">
-                    <button onClick={menuClick} className="title menu">
+                    <button onClick={menuClick} className="title menu" style={style.menuButton}>
                         <FontAwesomeIcon icon={menuIcon} size="3x" />
                     </button>
                     {/* <button onClick={props.loadButtonClick}>

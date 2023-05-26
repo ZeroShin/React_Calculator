@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Display from "./Display";
 import TitleBar from "./TitleBar";
 import ButtonPanel from "./ButtonPanel";
@@ -12,6 +12,10 @@ export default class App extends React.Component {
     next: null,
     operation: null,
   };
+
+  theme = {
+    name: "light",
+  }
 
 
   handleClick = async buttonName => {
@@ -42,11 +46,17 @@ export default class App extends React.Component {
     });
   }
 
+  themeButtonClick = (newTheme) => {
+    this.theme.name = newTheme;
+    this.forceUpdate();
+  }
+
   render() {
     return (
       <div className="component-app">
-        <TitleBar loadButtonClick={this.loadButtonClick} />
-        <Display value={this.state.next || this.state.total || "0"} />
+        {/* <TitleBar loadButtonClick={this.loadButtonClick} /> */}
+        <TitleBar onThemeChange={this.themeButtonClick} />
+        <Display value={this.state.next || this.state.total || "0"} theme={this.theme.name} />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
