@@ -14,6 +14,7 @@ export default class App extends React.Component {
   };
 
   theme = {
+    //쿠키를 가져와서 처음 처리를 진행해야 할 것으로 판단됨.
     name: "light",
   }
 
@@ -48,6 +49,7 @@ export default class App extends React.Component {
 
   themeButtonClick = (newTheme) => {
     this.theme.name = newTheme;
+    //업데이트를 진행해줘야 처리가 넘어간다.
     this.forceUpdate();
   }
 

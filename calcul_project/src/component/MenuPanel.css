@@ -1,0 +1,19 @@
+.menu-container {
+    position: relative;
+    overflow: hidden;
+    width: 200px; /* 메뉴 버튼의 너비 */
+  }
+  
+  .menu-container.open .menu-content {
+    transform: translateX(100%); /* 메뉴 콘텐츠를 오른쪽으로 이동 */
+  }
+  
+  .menu-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px; /* 메뉴 콘텐츠의 너비 */
+    transform: translateX(0); /* 초기에 숨긴 상태 */
+    transition: transform 0.3s ease-in-out; /* 애니메이션 효과 적용 */
+  }
+  
