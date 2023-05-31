@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faAnglesLeft, faCalculator, faCode, faFlask, fas } from '@fortawesome/free-solid-svg-icons'
 import './MenuPanel.css';
+
+library.add(fas, faAnglesLeft, faCalculator, faFlask, faCode)
 
 function MenuPanel() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,9 +18,18 @@ function MenuPanel() {
       <button onClick={handleButtonClick}>메뉴</button>
       <div className="menu-content">
         <ul>
-          <li>메뉴 항목 1</li>
-          <li>메뉴 항목 2</li>
-          <li>메뉴 항목 3</li>
+          <li>
+            <FontAwesomeIcon icon={faCalculator} />
+            표준
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faFlask} />
+            공학용
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faCode} />
+            프로그래머
+          </li>
         </ul>
       </div>
     </div>
