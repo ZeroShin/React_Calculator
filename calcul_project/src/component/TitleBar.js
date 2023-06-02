@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faAnglesLeft, faBars, faMoon, faSun, fas } from '@fortawesome/free-solid-svg-icons'
+import { faAnglesLeft, faBars, faL, faMoon, faSun, fas } from '@fortawesome/free-solid-svg-icons'
 import { useCookies } from 'react-cookie';
+import MenuPanel from "./MenuPanel";
 import "./TitleBar.css";
 
 library.add(fas, faBars, faAnglesLeft, faMoon, faSun)
@@ -12,9 +13,12 @@ function TitleBar({ data, onThemeChange }) {
     const [menuIcon, setMenuIcon] = useState(faBars);
     const [theme, setTheme] = useState(cookies.theme || 'light');
     const [dayIcon, setDayIcon] = useState(cookies.theme === 'dark' ? faMoon : faSun);
+    const [showMenu, setShowMenu] = useState(false);
 
     const menuClick = () => {
         setMenuIcon(menuIcon === faBars ? faAnglesLeft : faBars);
+        //눌렀을때 나왔다가 들어갔다가 할 수 있도록 해야되는데 내용은 계속 변경되어야 한다.
+        setShowMenu(!showMenu);
     };
 
     const dayClick = () => {
